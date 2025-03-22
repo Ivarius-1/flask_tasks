@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>калькулятор</title>
+    <style>
+        body{
+        font-family:Arial, sans-serif;
+        margin:50px;
+        }
+        .calculator{
+        max-width:380px;
+        margin:0 auto;
+        padding:20px;
+        border:1px solid #ccc;
+        border-radius:10px;
+        background-color:f9f9f9
+        }
+        input[type="number"], select, button{
+        width:100%;
+        padding:10px;
+        margin: 10px 0;
+        border:1px solid #ccc;
+        border:5px
+        }
+        button{
+        background-color:#4CAF50;
+        color:white;
+        cursor:pointer;
+        }
+        button:hover{
+        background-color:#45aB499
+        }
+        .result{
+        margin-top:20px;
+        font-size:1.2em;
+        text-align:center;
+        }>
+    </style>
+</head>
+<body>
+    <div class="calculator">
+    <h2>Калькулятор</h2>
+    <form method="POST">
+    <input type = "number" name ="number1" required></input>
+    <input type = "number" name ="number2" required></input>
+    <select name="operation">
+        <option value = "+">Сложение</option>
+        <option value = "-">Вычитание</option>
+        <option value = "*">Умножение</option>
+        <option value = "/">Деление</option>
+    </select>
+    <button type="submit">Вычислить</button>
+    </form>
+    {% if result is not none%}
+    <div class="result">
+        Результат = {{ result }}
+    </div>
+    {%endif %}
+`   </div>
+</body>
+</html>

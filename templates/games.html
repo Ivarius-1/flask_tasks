@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Мои любимые игры
+{% endblock %}
+
+{% block content %}
+<h1 class="mb-5">Мои любимые игры</h1>
+
+<div class="row">
+  {% for game in games %}
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-header fw-bold">{{ game.name }}</div>
+        <div class="card-body">
+          {% for studio in game.studios %}
+            <p class="badge bg-primary text-wrap">{{ studio.name }}</p>
+            <p class="card-text">Год выпуска: <strong>{{ studio.year }}</strong></p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
